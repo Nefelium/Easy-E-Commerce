@@ -14,6 +14,7 @@ protocol AdapterProtocol {
     func getAllElements() -> Any
     func getFilterElement(predicate: String) -> Any
     func isDBEmpty() -> Bool
+    func isNoMoreShowInStoreFront(predicate: String) -> Bool
     func saveElement(device: String, name: String, price: Double, quantity: Int)
     func buyElement(device: String)
     func getDeviceIndexByName(device: String) -> Int
@@ -59,6 +60,10 @@ class DatabaseAdapter: AdapterProtocol {
     
     func isDBEmpty() -> Bool {
         return realmObject.isDBEmpty()
+    }
+    
+    func isNoMoreShowInStoreFront(predicate: String) -> Bool {
+        return realmObject.isNoMoreShowInStoreFront(predicate: predicate)
     }
     
     func saveElement(device: String, name: String, price: Double, quantity: Int) {

@@ -35,6 +35,12 @@ class RealmDataBase: NSObject {
         return results.isEmpty
     }
     
+    func isNoMoreShowInStoreFront(predicate: String) -> Bool {
+        let realm = try! Realm()
+        let results =  realm.objects(Devices.self).filter(predicate)
+        return results.isEmpty
+    }
+    
     func getFilterData(predicate: String) ->   Results<Devices> { 
         let realm = try! Realm()
         let results =  realm.objects(Devices.self).filter(predicate)

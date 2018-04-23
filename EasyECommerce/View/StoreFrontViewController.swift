@@ -47,11 +47,15 @@ class StoreFrontViewController: UIPageViewController, UIPageViewControllerDataSo
     func getViewControllerAtIndex(index: Int) -> PageContentViewController
     {
         let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
-        if !DatabaseAdapter.baseAdapter.isDBEmpty() {
+        if !DatabaseAdapter.baseAdapter.isNoMoreShowInStoreFront(predicate: "quantity != 0") {
             let data = (DatabaseAdapter.baseAdapter.getFilterElement(predicate: "quantity != 0") as! Results<Devices>)[index]
         pageContentViewController.deviceName = data.name
         pageContentViewController.devicePrice = data.price
         pageContentViewController.deviceQuantity = data.quantity
+        } else {
+            pageContentViewController.deviceName = "No wares in database yet."
+            pageContentViewController.devicePrice = 0
+            pageContentViewController.deviceQuantity = 0
         }
         pageContentViewController.pageIndex = index
         
