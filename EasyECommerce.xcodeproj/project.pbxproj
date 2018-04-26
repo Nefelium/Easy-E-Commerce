@@ -87,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8424B567207E50E2003730FE /* AppDelegate.swift */,
+				84E92E71209186C7009F881A /* Database Services */,
 				842EBD43208B722400400724 /* Model */,
 				842EBD44208B723400400724 /* View */,
 				842EBD45208B724200400724 /* Controller */,
@@ -109,7 +110,6 @@
 		842EBD44208B723400400724 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8424B58320809BA9003730FE /* StoreFrontViewController.swift */,
 				8424B58520810B5A003730FE /* PageContentViewController.swift */,
 				8424B569207E50E2003730FE /* BackEndViewController.swift */,
 				842EBD3D20834CCC00400724 /* DeviceTableViewCell.swift */,
@@ -121,11 +121,19 @@
 		842EBD45208B724200400724 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8424B58320809BA9003730FE /* StoreFrontViewController.swift */,
 				842EBD3F208A2E6800400724 /* AllowedCharsTextField.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84E92E71209186C7009F881A /* Database Services */ = {
+			isa = PBXGroup;
+			children = (
 				84592D1520825141009B0A15 /* RealmDataBase.swift */,
 				842EBD41208B328500400724 /* DatabaseAdapter.swift */,
 			);
-			path = Controller;
+			path = "Database Services";
 			sourceTree = "<group>";
 		};
 		EFCC8DE0D0D5099F2B0418E9 /* Frameworks */ = {
